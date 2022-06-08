@@ -7,56 +7,62 @@ import {
   CardActions,
   Typography,
   Box,
-  Link,
 } from '@mui/material';
 
 import { styles } from './styles';
 import { ButtonLink } from '../ButtonLink';
 import { ButtonLinkColor } from '../ButtonLink/interfaces';
+import { MovieCardProps } from './interfaces';
 
-export const MovieCard: React.FC = () => {
+export const MovieCard: React.FC<MovieCardProps> = ({
+  id,
+  title,
+  actors,
+  genre,
+  plot,
+  poster,
+  runtime,
+  year,
+}) => {
   return (
     <Card sx={styles.movieCard}>
       <CardMedia
         component="img"
-        image="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+        image={poster}
         alt="image"
-        title="batman"
+        title={title}
         sx={styles.movieCardImg}
       />
       <Box sx={styles.movieCardContentWrapper}>
         <CardContent sx={styles.movieCardContent}>
-          <Link sx={styles.movieCardTitleLink} href="/movie/:id">
-            <Typography variant="h2">Film name</Typography>
-          </Link>
-          <Typography variant="h3" sx={styles.movieCardDescription}>
-            actor, actor
+          <Typography variant="h2" sx={styles.movieCardTitleLink}>
+            {title}
           </Typography>
-          <Typography variant="h3">Description</Typography>
+          <Typography variant="h3" sx={styles.movieCardDescription}>
+            {actors}
+          </Typography>
+          <Typography variant="h3">{plot}</Typography>
         </CardContent>
         <CardActions sx={styles.movieCardActions}>
           <Box sx={styles.movieCardTagsWrapper}>
-            <Typography variant="h4" sx={styles.movieCardTag}>
-              tag
-            </Typography>
-            <Typography variant="h4" sx={styles.movieCardTag}>
-              tag
-            </Typography>
-            <Typography variant="h4" sx={styles.movieCardTag}>
-              tag
-            </Typography>
+            {genre &&
+              genre.map((item) => (
+                <Typography variant="h4" sx={styles.movieCardTag} key={item}>
+                  {item}
+                </Typography>
+              ))}
           </Box>
           <Box sx={styles.movieCardAdditionalInfo}>
             <Typography variant="h3" sx={styles.movieCardYear}>
-              year
+              {year} year
             </Typography>
             <Typography variant="h3" sx={styles.movieCardDescription}>
-              runtime
+              {runtime}
             </Typography>
           </Box>
           <ButtonLink
             className={styles.movieCardLinkButton}
-            href="/movie/:id"
+            path={`/movie/${id}`}
             title="More info..."
             color={ButtonLinkColor.SECONDARY}
           />

@@ -1,23 +1,23 @@
-import { Button, Link } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { Button } from '@mui/material';
 import {
   ButtonLinkColor,
   ButtonLinkProps,
   ButtonLinkVariant,
 } from './interfaces';
-import { getStyles } from './styles';
 
 export const ButtonLink: React.FC<ButtonLinkProps> = ({
   title,
-  href,
+  path,
   variant = ButtonLinkVariant.CONTAINED,
   className,
   color = ButtonLinkColor.PRIMARY,
 }) => {
-  const styles = getStyles(className);
   return (
-    <Link href={href} sx={styles}>
-      <Button variant={variant} color={color}>
+    <Link to={path}>
+      <Button variant={variant} color={color} sx={className}>
         {title}
       </Button>
     </Link>

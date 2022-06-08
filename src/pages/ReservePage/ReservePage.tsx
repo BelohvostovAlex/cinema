@@ -25,7 +25,7 @@ export const ReservePage: React.FC = () => {
           <Typography variant="h2">1321$</Typography>
         </Box>
         <ButtonLink
-          href="/user"
+          path="/user"
           title="Add"
           className={styles.root.infoBlockButton}
         />

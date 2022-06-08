@@ -30,7 +30,7 @@ export const styles = {
   movieTitle: {
     width: '454px',
     height: '57px',
-    background: 'rgba(43, 34, 67, 1)',
+    background: 'rgba(43, 34, 67, 0.1)',
     padding: '7px 16px 8px 10px',
     color: palette.color.black,
     display: 'flex',
@@ -42,7 +42,7 @@ export const styles = {
     maxWidth: '200px',
     height: '57px',
     padding: '11px 4px 12px 9px',
-    background: 'rgba(43, 34, 67, 1)',
+    background: 'rgba(43, 34, 67, 0.1)',
     alignSelf: 'flex-end',
     zIndex: 1
   },

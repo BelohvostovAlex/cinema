@@ -21,6 +21,6 @@ export interface ButtonLinkProps {
   title: string,
   className?: SxProps,
   variant?: ButtonLinkVariant,
-  href: string,
+  path: string,
   color?: ButtonLinkColor
 }

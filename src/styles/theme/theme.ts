@@ -106,7 +106,7 @@ export const theme = createTheme({
           lineHeight: '17.07px',
           width: 'auto',
           minWidth: '80px',
-          height: '26px',
+          minHeight: '26px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'flex-end',

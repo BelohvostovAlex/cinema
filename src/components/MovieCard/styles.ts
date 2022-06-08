@@ -27,10 +27,12 @@ export const styles = {
   },
   movieCardContent: {
     marginLeft: '28px',
-    paddingTop: '5px',
+    width: '370px'
   },
   movieCardTitleLink: {
     marginBottom: '25px',
+    display: 'flex',
+    justifyContent: 'flex-start'
   },
   movieCardDescription: {
     marginBottom: '20px',
@@ -38,12 +40,14 @@ export const styles = {
   movieCardActions: {
     display: 'flex',
     flexDirection: 'column',
+    maxWidth: '220px',
     padding: '0px',
   },
   movieCardTagsWrapper: {
     display: 'flex',
-    // ml: '10px',
     marginBottom: '30px',
+    justifyContent: 'flex-end',
+    flexWrap: 'wrap'
   },
   movieCardTag: {
     minWidth: '34px',
@@ -53,10 +57,17 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '6px 8px',
     marginRight: '14px',
-    '&:nth-of-type(3)': {
+    '&:last-of-type': {
       marginRight: '0px',
     },
+    '&:nth-of-type(n+4)': {
+      marginTop: '6px',
+    },
+    '&:nth-of-type(3n)': {
+      marginRight: '0px',
+    }
   },
   movieCardAdditionalInfo: {
     width: '70px',
