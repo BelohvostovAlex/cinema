@@ -29,7 +29,8 @@ export const styles = {
     marginLeft: '28px',
     width: '370px'
   },
-  movieCardTitleLink: {
+  movieCardTitle: {
+    paddingTop: '5px',
     marginBottom: '25px',
     display: 'flex',
     justifyContent: 'flex-start'

@@ -1,24 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useCurrentMovie } from '../../hooks/useCurrentMovie';
 
-import { IMovie } from '../../models/IMovie';
-import { fetchOneMovie } from '../../services/webService';
 import { MoviePage } from './MoviePage';
 
 export const MoviePageContainer: React.FC = () => {
   const { id } = useParams();
 
-  const [currentMovie, setCurrentMovie] = useState({} as IMovie);
-
-  const getCurrentMovie = useCallback(async () => {
-    const data = await fetchOneMovie(id!);
-
-    setCurrentMovie(data);
-  }, [id]);
-
-  useEffect(() => {
-    getCurrentMovie();
-  }, [getCurrentMovie]);
+  const currentMovie = useCurrentMovie(id!)
 
   const {
     Title,
@@ -35,11 +24,13 @@ export const MoviePageContainer: React.FC = () => {
     Released,
     Year,
     Country,
+    imdbID
   } = currentMovie;
 
   return (
     <MoviePage
       title={Title}
+      id={imdbID}
       actors={Actors}
       awards={Awards}
       boxOffice={BoxOffice}

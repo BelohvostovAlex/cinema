@@ -7,6 +7,7 @@ import { ButtonLink } from '../../components/ButtonLink';
 import { MoviePageProps } from './interfaces';
 
 export const MoviePage: React.FC<MoviePageProps> = ({
+  id,
   actors,
   awards,
   boxOffice,
@@ -37,7 +38,7 @@ export const MoviePage: React.FC<MoviePageProps> = ({
             <Typography variant="h2" sx={styles.movieTitle}>
               {title}
             </Typography>
-            <ButtonLink path="/reserve/:id" title="Buy a ticket" />
+            <ButtonLink path={`/reserve/${id}`} title="Buy a ticket" />
           </Box>
           <Box sx={styles.movieRating}>
             <Typography variant="h3" sx={styles.movieRatingTitle}>

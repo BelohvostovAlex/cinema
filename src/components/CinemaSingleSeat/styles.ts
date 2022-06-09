@@ -6,14 +6,12 @@ interface getStylesProps {
   isReserved?: boolean
 }
 
-export const getStyles = ({isAvailable, isChecked, isReserved}: getStylesProps) => {
+export const getStyles = ({ isChecked, isReserved }: getStylesProps) => {
   const root = {
     seat: {
       width: '36px',
       height: '36px',
       background: '#C4C4C4',
-    },
-    seatAvailable: {
       border: '3px solid #85FF91',
       '&:hover': {
         background: '#85FF91'
@@ -31,9 +29,6 @@ export const getStyles = ({isAvailable, isChecked, isReserved}: getStylesProps) 
         background: '#FF0000'
       }
     }
-  }
-    if(isAvailable) {
-    return mergeStyles(root.seat, root.seatAvailable)
   }
   if(isChecked) {
     return mergeStyles(root.seat, root.seatChecked)

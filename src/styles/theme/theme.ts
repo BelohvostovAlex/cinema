@@ -67,7 +67,7 @@ export const theme = createTheme({
           color: palette.color.white,
           border: `3px solid ${palette.color.black}`,
           justifyContent: 'flex-start',
-          padding: '17px 19px 14px 19px',
+          padding: '18px 19px 13px 19px',
           lineHeight: '17px',
           '&:hover': {
             background: palette.background.black,

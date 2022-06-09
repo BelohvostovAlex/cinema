@@ -1,4 +1,5 @@
 export interface MoviePageProps {
+  id: string,
   title: string,
   actors: string,
   awards: string,

@@ -35,7 +35,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
       />
       <Box sx={styles.movieCardContentWrapper}>
         <CardContent sx={styles.movieCardContent}>
-          <Typography variant="h2" sx={styles.movieCardTitleLink}>
+          <Typography variant="h2" sx={styles.movieCardTitle}>
             {title}
           </Typography>
           <Typography variant="h3" sx={styles.movieCardDescription}>

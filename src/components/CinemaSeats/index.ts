@@ -1,0 +1,1 @@
+export {CinemaSeatsContainer as CinemaSeats} from './CinemaSeatsContainer'
