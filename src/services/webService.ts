@@ -4,9 +4,9 @@ import { IParams } from '../store/reducers/movies/moviesTypes';
 
 export const fetchAllMovies = async (params: IParams) => {
   try {
-    const { title, page } = params;
+    const { filter, page } = params;
     const { data } = await axios.get(
-      `${API_URL}?s=${title}&page=${page}&type=movie&apikey=${API_KEY}`
+      `${API_URL}?s=${filter}&page=${page}&type=movie&apikey=${API_KEY}`
     );
 
     if (data.Response === 'False') {

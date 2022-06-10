@@ -9,6 +9,6 @@ export interface moviesInitialState {
 }
 
 export interface IParams {
-  title: string,
+  filter: string,
   page: number
 }

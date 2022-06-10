@@ -11,7 +11,7 @@ const initialState: moviesInitialState = {
   page: 1
 }
 
-const {fetchMovie, fetchMovies} = allAsyncActions
+const { fetchMovies } = allAsyncActions
 
 export const moviesSlicer = createSlice({
   name: 'movies',
@@ -38,14 +38,6 @@ export const moviesSlicer = createSlice({
       state.isLoading = false
       state.movies = [] as IMovie[]
       state.isError = 'Failed to fetch movies...'
-    },
-    [fetchMovie.pending.type]: (state) => {
-      state.isError = ''
-      state.isLoading = true
-    },
-    [fetchMovie.rejected.type]: (state) => {
-      state.isError = 'Failed to fetch the movie'
-      state.isLoading = false
     },
   }
 })

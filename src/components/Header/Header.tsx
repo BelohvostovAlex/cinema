@@ -2,9 +2,9 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { Box, Typography, Link, Container } from '@mui/material';
+import { HeaderProps } from './interfaces';
 
 import { styles } from './styles';
-import { HeaderProps } from './interfaces';
 
 export const Header: React.FC<HeaderProps> = ({
   title = 'Welcome to our cinema',
@@ -38,5 +38,3 @@ export const Header: React.FC<HeaderProps> = ({
     </Box>
   );
 };
-
-//React memo?

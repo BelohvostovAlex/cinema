@@ -64,12 +64,15 @@ export const styles = {
   movieInfoBox: {
     marginTop: '27px',
     width: '364px',
-    minHeight: '351px',
-    padding: '47px 37px 57px 45px',
+    minHeight: '500px',
+    padding: '24px 37px 29px 32px',
     background: palette.background.black,
     '& > h2': {
-      marginBottom: '15px'
-    }
+      marginBottom: '30px',
+      '&:last-of-type': {
+        marginBottom: 0
+      }
+    },
   },
   moviePostersBox: {
     marginLeft: '19px',

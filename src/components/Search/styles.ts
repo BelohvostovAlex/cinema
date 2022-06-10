@@ -1,5 +1,3 @@
-import { palette } from "../../styles/theme/theme"
-
 export const styles = {
   searchWrapper: {
     marginBottom: '48px',
@@ -18,10 +16,5 @@ export const styles = {
     lineHeight: '29px',
     fontWeight: 400,
     borderRadius: '0px 5px 5px 0px',
-    '&:hover': {
-      background: palette.background.primary,
-      border: 'none',
-      color: 'inherit'
-    }
   }
 }

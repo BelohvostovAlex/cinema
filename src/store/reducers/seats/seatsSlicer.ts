@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { ISeat, ITicket } from "../../../models/ITicket"
 import { seatsInitialState } from "./seatsTypes"
+import {findMovie} from '../../../helpers/findMovie'
 
 const initialState: seatsInitialState = {
-    reserved: [],
-    checked: []
+    bookedMovies: []
 }
 
 export const seatsSlicer = createSlice({
@@ -12,33 +12,42 @@ export const seatsSlicer = createSlice({
     initialState,
     reducers: {
         setCheckedMovie: (state, action: PayloadAction<ITicket>) => {
-            const currentMovie = state.checked.find(item => item.id === action.payload.id)
-            if(currentMovie) {
+            const currentMovie = findMovie(state.bookedMovies, action.payload.id)
+            if(currentMovie?.title === action.payload.title) {
                 return
             } else {
-                state.checked.push(action.payload)
+                state.bookedMovies.push(action.payload)
             }
         },
         addCheckedSeat: (state, action: PayloadAction<ISeat>) => {
-            const currentMovie = state.checked.find(item => item.id === action.payload.id)
+            const currentMovie = findMovie(state.bookedMovies, action.payload.id)
             if(currentMovie) {
-                const currentSeat = currentMovie.checked.includes(action.payload.seatNumber)
-                if(currentSeat) {
+                const currentReservedSeat = currentMovie.reserved.includes(action.payload.seatNumber)
+                if(currentReservedSeat) {
+                    return
+                }
+                const currentCheckedSeat = currentMovie.checked.includes(action.payload.seatNumber)
+                if(currentCheckedSeat) {
                     currentMovie.checked = currentMovie.checked.filter(item => item !== action.payload.seatNumber)
-                    currentMovie.totalPrice = currentMovie.totalPrice - action.payload.price
-                    currentMovie.totalAmount = currentMovie.totalAmount - 1
-                    if(currentMovie.totalAmount === 0) {
-                        state.checked = state.checked.filter(item => item.id !== action.payload.id)
-                    }
+                    currentMovie.totalCheckedPrice = currentMovie.totalCheckedPrice - action.payload.price
+                    currentMovie.totalCheckedAmount = currentMovie.totalCheckedAmount - 1
                 } else {
                     currentMovie.checked.push(action.payload.seatNumber)
-                    currentMovie.totalPrice = currentMovie.totalPrice + action.payload.price
-                    currentMovie.totalAmount = currentMovie.totalAmount + 1
+                    currentMovie.totalCheckedPrice = currentMovie.totalCheckedPrice + action.payload.price
+                    currentMovie.totalCheckedAmount = currentMovie.totalCheckedAmount + 1
                 }
             }
+        },
+        addReservedSeat: (state, action: PayloadAction<string>) => {
+            const currentMovie = findMovie(state.bookedMovies, action.payload)
+            currentMovie!.reserved = [...currentMovie!.reserved, ...currentMovie!.checked]
+            currentMovie!.totalReservedAmount = currentMovie!.reserved.length
+            currentMovie!.checked = []
+            currentMovie!.totalCheckedPrice = 0
+            currentMovie!.totalCheckedAmount = 0
         }
     }
 })
 
-export const {setCheckedMovie, addCheckedSeat} = seatsSlicer.actions
+export const {setCheckedMovie, addCheckedSeat, addReservedSeat} = seatsSlicer.actions
 export default seatsSlicer.reducer

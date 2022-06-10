@@ -1,0 +1,1 @@
+export { UserSummaryBlockContainer as UserSummaryBlock } from './UserSummaryBlockContainer'

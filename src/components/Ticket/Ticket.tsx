@@ -1,27 +1,38 @@
 import React from 'react';
 
 import { Box, Button, Typography } from '@mui/material';
+import { RegularLink } from '../RegularLink/RegularLink';
 import { TicketProps } from './interfaces';
 
-import { getStyles } from './styles';
+import { styles } from './styles';
 
-export const Ticket: React.FC<TicketProps> = () => {
-  const styles = getStyles();
-
+export const Ticket: React.FC<TicketProps> = ({
+  id,
+  title,
+  amount,
+  price,
+  addReservedTickets,
+}) => {
   return (
-    <Box sx={styles.root.ticketWrapper}>
-      <Box sx={styles.root.ticketInfo}>
-        <Typography variant="h2">Movie name:</Typography>
-        <Typography variant="h2">123 tickets</Typography>
+    <Box sx={styles.ticketWrapper}>
+      <Box sx={styles.ticketInfo}>
+        <RegularLink
+          path={`/movie/${id}`}
+          title={`${title}:`}
+          style={styles.ticketTitle}
+        />
+        <Typography variant="h2">
+          {amount} {amount > 1 ? 'tickets' : 'ticket'}
+        </Typography>
       </Box>
-      <Box sx={styles.root.ticketInfo}>
+      <Box sx={styles.ticketInfo}>
         <Typography variant="h2">Total cost:</Typography>
-        <Typography variant="h2">1321$</Typography>
+        <Typography variant="h2">{price}$</Typography>
       </Box>
       <Button
         variant="contained"
-        onClick={() => console.log('reserved')}
-        sx={styles.root.ticketButton}
+        onClick={addReservedTickets}
+        sx={styles.ticketButton}
       >
         Reserve
       </Button>

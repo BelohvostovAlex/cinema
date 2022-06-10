@@ -14,10 +14,11 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
   variant = ButtonLinkVariant.CONTAINED,
   className,
   color = ButtonLinkColor.PRIMARY,
+  onClick,
 }) => {
   return (
     <Link to={path}>
-      <Button variant={variant} color={color} sx={className}>
+      <Button variant={variant} color={color} sx={className} onClick={onClick}>
         {title}
       </Button>
     </Link>

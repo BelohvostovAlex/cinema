@@ -1,13 +1,26 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useCurrentMovie } from '../../hooks/useCurrentMovie';
+import { setCheckedMovie } from '../../store/reducers/seats/seatsSlicer';
 
 import { MoviePage } from './MoviePage';
 
+const defaultTicketInfo = {
+  id: '',
+  title: '',
+  checked: [],
+  reserved: [],
+  totalCheckedAmount: 0,
+  totalCheckedPrice: 0,
+  totalReservedAmount: 0,
+};
+
 export const MoviePageContainer: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { id } = useParams();
 
-  const currentMovie = useCurrentMovie(id!)
+  const currentMovie = useCurrentMovie(id!);
 
   const {
     Title,
@@ -24,8 +37,12 @@ export const MoviePageContainer: React.FC = () => {
     Released,
     Year,
     Country,
-    imdbID
+    imdbID,
   } = currentMovie;
+
+  const addCurrentMovie = () => {
+    dispatch(setCheckedMovie({ ...defaultTicketInfo, id: id!, title: Title }));
+  };
 
   return (
     <MoviePage
@@ -44,6 +61,7 @@ export const MoviePageContainer: React.FC = () => {
       released={Released}
       year={Year}
       country={Country}
+      addCurrentMovie={addCurrentMovie}
     />
   );
 };

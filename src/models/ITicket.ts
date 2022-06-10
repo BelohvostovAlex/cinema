@@ -3,8 +3,9 @@ export interface ITicket {
     title: string,
     reserved: string[],
     checked: string[],
-    totalPrice: number,
-    totalAmount: number
+    totalCheckedPrice: number,
+    totalCheckedAmount: number,
+    totalReservedAmount: number
 }
 
 export interface ISeat {

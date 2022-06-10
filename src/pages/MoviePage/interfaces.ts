@@ -13,5 +13,6 @@ export interface MoviePageProps {
   imdbRating: string,
   released: string,
   year: string,
-  country: string
+  country: string,
+  addCurrentMovie: () => void
 }

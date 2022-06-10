@@ -5,7 +5,7 @@ import { CinemaSingleSeatProps } from './interfaces';
 
 import { getStyles } from './styles';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
-import { addCheckedSeat,setCheckedMovie } from '../../store/reducers/seats/seatsSlicer';
+import { addCheckedSeat } from '../../store/reducers/seats/seatsSlicer';
 
 export const CinemaSingleSeat: React.FC<CinemaSingleSeatProps> = ({
   isChecked,
@@ -14,19 +14,16 @@ export const CinemaSingleSeat: React.FC<CinemaSingleSeatProps> = ({
   checkPrice,
   id,
   title,
-  row
+  row,
 }) => {
   const styles = getStyles({ isChecked, isReserved });
 
-  const dispatch = useAppDispatch()
-
+  const dispatch = useAppDispatch();
 
   const addSeat = () => {
-    const price = checkPrice(row)
-    dispatch(setCheckedMovie({id, title, checked: [], reserved: [], totalAmount: 0, totalPrice: 0 }))
-    dispatch(addCheckedSeat({id, title, price: price, seatNumber}))
-  }
+    const price = checkPrice(row);
+    dispatch(addCheckedSeat({ id, title, price: price, seatNumber }));
+  };
 
-
-  return <Box sx={styles} onClick={addSeat}/>;
+  return <Box sx={styles} onClick={addSeat} />;
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Box, CardContent, Typography, CardMedia, Card } from '@mui/material';
-
-import { styles } from './styles';
 import { ButtonLink } from '../../components/ButtonLink';
 import { MoviePageProps } from './interfaces';
+
+import { styles } from './styles';
 
 export const MoviePage: React.FC<MoviePageProps> = ({
   id,
@@ -22,6 +22,7 @@ export const MoviePage: React.FC<MoviePageProps> = ({
   title,
   year,
   country,
+  addCurrentMovie,
 }) => {
   return (
     <Box>
@@ -38,7 +39,11 @@ export const MoviePage: React.FC<MoviePageProps> = ({
             <Typography variant="h2" sx={styles.movieTitle}>
               {title}
             </Typography>
-            <ButtonLink path={`/reserve/${id}`} title="Buy a ticket" />
+            <ButtonLink
+              path={`/reserve/${id}`}
+              title="Buy a ticket"
+              onClick={addCurrentMovie}
+            />
           </Box>
           <Box sx={styles.movieRating}>
             <Typography variant="h3" sx={styles.movieRatingTitle}>
@@ -68,34 +73,16 @@ export const MoviePage: React.FC<MoviePageProps> = ({
             </Box>
           </Box>
           <Box sx={styles.moviePostersBox}>
-            <CardMedia
-              sx={styles.moviePoster}
-              component="img"
-              image={poster}
-              alt="image"
-              title={title}
-            />
-            <CardMedia
-              sx={styles.moviePoster}
-              component="img"
-              image={poster}
-              alt="image"
-              title={title}
-            />
-            <CardMedia
-              sx={styles.moviePoster}
-              component="img"
-              image={poster}
-              alt="image"
-              title={title}
-            />
-            <CardMedia
-              sx={styles.moviePoster}
-              component="img"
-              image={poster}
-              alt="image"
-              title={title}
-            />
+            {[1, 2, 3, 4].map((item) => (
+              <CardMedia
+                key={item}
+                sx={styles.moviePoster}
+                component="img"
+                image={poster}
+                alt="image"
+                title={title}
+              />
+            ))}
           </Box>
         </CardContent>
       </Card>

@@ -14,7 +14,7 @@ export const SearchContainer: React.FC<SearchContainerProps> = ({
   const [value, handleValue] = useInput('');
 
   const getSearchedMovies = () => {
-    dispatch(fetchMovies({ title: value, page }));
+    dispatch(fetchMovies({ filter: value, page }));
     filterHandler(value);
   };
 

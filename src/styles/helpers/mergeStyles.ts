@@ -1,3 +1,5 @@
-export const mergeStyles = (...styles: {}[] ) => { //как в аргументах ...rest типизировать более граммотно?
+import { SxProps } from "@mui/material"
+
+export const mergeStyles = (...styles: SxProps[] ) => {
   return styles.reduce((acc,curr) => ({...acc, ...curr}),{})
 }
