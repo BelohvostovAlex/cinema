@@ -3,11 +3,13 @@ import { IMovie } from "../../../models/IMovie"
 import { allAsyncActions } from "./asyncActions"
 import { moviesInitialState } from "./moviesTypes"
 
+const defaultFilter = 'star wars'
+
 const initialState: moviesInitialState = {
   movies: [] as IMovie[],
   isError: '',
   isLoading: false,
-  filter: '',
+  filter: defaultFilter,
   page: 1
 }
 

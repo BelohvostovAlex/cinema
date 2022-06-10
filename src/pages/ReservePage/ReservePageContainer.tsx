@@ -24,15 +24,15 @@ export const ReservePageContainer: React.FC = () => {
 
   const currentMovie = useCurrentMovie(id!);
   const { Title, imdbID } = currentMovie;
-  console.log(Title);
 
   const { bookedMovies } = useAppSelector((state) => state.seats);
   const checkedMovie = findMovie(bookedMovies, id!);
-  let total, pricetotal;
+
+  let totalCheckedSeats, totalCheckedSeatsPrice;
   if (checkedMovie) {
     const { totalCheckedAmount, totalCheckedPrice } = checkedMovie!;
-    total = totalCheckedAmount;
-    pricetotal = totalCheckedPrice;
+    totalCheckedSeats = totalCheckedAmount;
+    totalCheckedSeatsPrice = totalCheckedPrice;
   }
   useEffect(() => {
     dispatch(setCheckedMovie({ ...defaultTicketInfo, id: id!, title: Title }));
@@ -42,8 +42,8 @@ export const ReservePageContainer: React.FC = () => {
     <ReservePage
       title={Title}
       id={imdbID}
-      totalAmount={total}
-      totalPrice={pricetotal}
+      totalAmount={totalCheckedSeats}
+      totalPrice={totalCheckedSeatsPrice}
     />
   );
 };

@@ -20,7 +20,7 @@ export const MainContainer: React.FC = () => {
   };
 
   useEffect(() => {
-    dispatch(setFilter(filter ? filter : 'star wars'));
+    dispatch(setFilter(filter));
     dispatch(fetchMovies({ filter, page }));
   }, [dispatch, filter, page]);
 
