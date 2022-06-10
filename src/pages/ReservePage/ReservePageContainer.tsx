@@ -7,16 +7,7 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 import { useCurrentMovie } from '../../hooks/useCurrentMovie';
 import { setCheckedMovie } from '../../store/reducers/seats/seatsSlicer';
 import { ReservePage } from './ReservePage';
-
-const defaultTicketInfo = {
-  id: '',
-  title: '',
-  checked: [],
-  reserved: [],
-  totalCheckedAmount: 0,
-  totalCheckedPrice: 0,
-  totalReservedAmount: 0,
-};
+import { defaultTicket } from '../../config/defaultValues';
 
 export const ReservePageContainer: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -35,7 +26,7 @@ export const ReservePageContainer: React.FC = () => {
     totalCheckedSeatsPrice = totalCheckedPrice;
   }
   useEffect(() => {
-    dispatch(setCheckedMovie({ ...defaultTicketInfo, id: id!, title: Title }));
+    dispatch(setCheckedMovie({ ...defaultTicket, id: id!, title: Title }));
   }, [Title, id, dispatch]);
 
   return (

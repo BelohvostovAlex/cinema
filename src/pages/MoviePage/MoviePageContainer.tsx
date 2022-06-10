@@ -1,20 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useCurrentMovie } from '../../hooks/useCurrentMovie';
 import { setCheckedMovie } from '../../store/reducers/seats/seatsSlicer';
+import { defaultTicket } from '../../config/defaultValues';
 
 import { MoviePage } from './MoviePage';
-
-const defaultTicketInfo = {
-  id: '',
-  title: '',
-  checked: [],
-  reserved: [],
-  totalCheckedAmount: 0,
-  totalCheckedPrice: 0,
-  totalReservedAmount: 0,
-};
 
 export const MoviePageContainer: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -41,7 +33,7 @@ export const MoviePageContainer: React.FC = () => {
   } = currentMovie;
 
   const addCurrentMovie = () => {
-    dispatch(setCheckedMovie({ ...defaultTicketInfo, id: id!, title: Title }));
+    dispatch(setCheckedMovie({ ...defaultTicket, id: id!, title: Title }));
   };
 
   return (
