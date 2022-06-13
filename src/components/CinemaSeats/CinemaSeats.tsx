@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Table, TableBody, TableCell, TableRow } from '@mui/material';
-import { CinemaSingleSeat } from '../CinemaSingleSeat/CinemaSingleSeat';
+import { CinemaSingleSeat } from '../CinemaSingleSeat';
 import { CinemaSeatsProps } from './iterfaces';
 
-import { getStyles } from './styles';
+import { styles } from './styles';
 
 const seatsRows = ['A', 'B', 'C', 'D', 'E'];
 
@@ -17,15 +17,13 @@ export const CinemaSeats: React.FC<CinemaSeatsProps> = ({
   isChecked,
   isReserved,
 }) => {
-  const styles = getStyles();
-
   return (
-    <Table sx={styles.root.seatsTable}>
+    <Table sx={styles.seatsTable}>
       <TableBody>
         {seatsRows.map((row) => (
           <TableRow key={row}>
             {seatsColumns.map((column) => (
-              <TableCell key={column} sx={styles.root.seatsTableCell}>
+              <TableCell key={column} sx={styles.seatsTableCell}>
                 <CinemaSingleSeat
                   seatNumber={row + column}
                   checkPrice={checkPrice}

@@ -1,20 +1,20 @@
-import { SxProps } from "@mui/material"
-import { mergeStyles } from "../../styles/helpers/mergeStyles"
+import { SxProps } from '@mui/material';
+import { mergeStyles } from '../../styles/helpers/mergeStyles';
 
 interface getStylesProps {
-  style?: SxProps
+  style?: SxProps;
 }
 
-export const getStyles = ({style}: getStylesProps) => {
+export const getStyles = ({ style }: getStylesProps) => {
   const root = {
     link: {
       '&:hover': {
-        textDecoration: 'underline'
-      }
-    }
+        textDecoration: 'underline',
+      },
+    },
+  };
+  if (style) {
+    return mergeStyles(style, root.link);
   }
-  if(style) {
-    return mergeStyles(style, root.link)
-  }
-  return root.link
-}
+  return root.link;
+};

@@ -1,1 +1,1 @@
-export { TicketContainer as Ticket } from './TicketContainer'
+export { TicketContainer as Ticket } from './TicketContainer';

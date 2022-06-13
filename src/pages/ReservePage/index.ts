@@ -1,1 +1,1 @@
-export { ReservePageContainer } from './ReservePageContainer'
+export { ReservePageContainer as ReservePage } from './ReservePageContainer';

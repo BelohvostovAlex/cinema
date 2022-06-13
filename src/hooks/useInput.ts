@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-export const useInput = (
-  initialValue: string
-): [string, (e: React.ChangeEvent<HTMLInputElement>) => void] => {
+type UseInput = [string, (e: React.ChangeEvent<HTMLInputElement>) => void];
+
+export const useInput = (initialValue: string): UseInput => {
   const [value, setValue] = useState(initialValue);
 
   const handleValue = (e: React.ChangeEvent<HTMLInputElement>) => {

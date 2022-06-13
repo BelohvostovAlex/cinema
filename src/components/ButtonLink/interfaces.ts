@@ -1,4 +1,4 @@
-import { SxProps } from "@mui/material";
+import { SxProps } from '@mui/material';
 
 export enum ButtonLinkVariant {
   OUTLINED = 'outlined',
@@ -13,15 +13,14 @@ export enum ButtonLinkColor {
   PRIMARY = 'primary',
   WARNING = 'warning',
   SUCCESS = 'success',
-  SECONDARY = 'secondary'
-
+  SECONDARY = 'secondary',
 }
 
 export interface ButtonLinkProps {
-  title: string,
-  className?: SxProps,
-  variant?: ButtonLinkVariant,
-  path: string,
-  color?: ButtonLinkColor,
-  onClick?: () => void
+  title: string;
+  style?: SxProps;
+  variant?: ButtonLinkVariant;
+  path: string;
+  color?: ButtonLinkColor;
+  onClick?: () => void;
 }

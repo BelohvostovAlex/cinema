@@ -8,7 +8,6 @@ import { UserProps } from './interfaces';
 import { styles } from './styles';
 
 export const User: React.FC<UserProps> = ({ movies }) => {
-  console.log(movies);
   return (
     <Box sx={styles.userWrapper}>
       <Typography variant="h2" sx={styles.userTitle}>

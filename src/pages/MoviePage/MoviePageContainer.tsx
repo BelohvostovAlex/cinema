@@ -1,15 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useActions } from '../../hooks/useActions';
 import { useCurrentMovie } from '../../hooks/useCurrentMovie';
-import { setCheckedMovie } from '../../store/reducers/seats/seatsSlicer';
 import { defaultTicket } from '../../config/defaultValues';
-
 import { MoviePage } from './MoviePage';
 
 export const MoviePageContainer: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const { setCheckedMovie } = useActions();
+
   const { id } = useParams();
 
   const currentMovie = useCurrentMovie(id!);
@@ -33,7 +32,7 @@ export const MoviePageContainer: React.FC = () => {
   } = currentMovie;
 
   const addCurrentMovie = () => {
-    dispatch(setCheckedMovie({ ...defaultTicket, id: id!, title: Title }));
+    setCheckedMovie({ ...defaultTicket, id: id!, title: Title });
   };
 
   return (

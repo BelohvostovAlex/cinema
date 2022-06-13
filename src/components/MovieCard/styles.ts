@@ -28,38 +28,35 @@ export const styles = {
   movieCardContent: {
     marginLeft: '28px',
     width: '370px',
-    height: '226',
-    overflow: 'hidden'
+    // height: '226px', check
+    overflow: 'hidden',
   },
   movieCardTitle: {
     paddingTop: '5px',
     marginBottom: '25px',
     display: 'flex',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
   movieCardDescription: {
     marginBottom: '20px',
   },
   movieCardActions: {
-    display: 'flex',
     flexDirection: 'column',
     maxWidth: '220px',
     padding: '0px',
   },
   movieCardTagsWrapper: {
     display: 'flex',
+    width: '210px',
     marginBottom: '30px',
     justifyContent: 'flex-end',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   movieCardTag: {
     minWidth: '34px',
     height: '25px',
     background: palette.background.black,
     borderRadius: '5px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: '6px 8px',
     marginRight: '14px',
     '&:last-of-type': {
@@ -70,7 +67,7 @@ export const styles = {
     },
     '&:nth-of-type(3n)': {
       marginRight: '0px',
-    }
+    },
   },
   movieCardAdditionalInfo: {
     width: '70px',

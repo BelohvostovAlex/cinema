@@ -1,4 +1,4 @@
-import { palette } from "../../styles/theme/theme"
+import { palette } from '../../styles/theme/theme';
 
 export const styles = {
   summaryBlock: {
@@ -14,5 +14,5 @@ export const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: '14px',
-  }
-}
+  },
+};

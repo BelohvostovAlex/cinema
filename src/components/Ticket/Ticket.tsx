@@ -29,13 +29,11 @@ export const Ticket: React.FC<TicketProps> = ({
         <Typography variant="h2">Total cost:</Typography>
         <Typography variant="h2">{price}$</Typography>
       </Box>
-      <Button
-        variant="contained"
-        onClick={addReservedTickets}
-        sx={styles.ticketButton}
-      >
-        Reserve
-      </Button>
+      <Box sx={styles.ticketButtonWrapper}>
+        <Button variant="contained" onClick={addReservedTickets}>
+          Reserve
+        </Button>
+      </Box>
     </Box>
   );
 };

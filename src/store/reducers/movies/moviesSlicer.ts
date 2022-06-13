@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IMovie } from '../../../models/IMovie';
-import { allAsyncActions } from './asyncActions';
+import { fetchMovies } from './asyncActions/fetchMovies';
 import { moviesInitialState } from './moviesTypes';
 import { defaultFilter } from '../../../config/defaultValues';
 
@@ -11,8 +11,6 @@ const initialState: moviesInitialState = {
   filter: defaultFilter,
   page: 1,
 };
-
-const { fetchMovies } = allAsyncActions;
 
 export const moviesSlicer = createSlice({
   name: 'movies',
@@ -44,4 +42,5 @@ export const moviesSlicer = createSlice({
 });
 
 export const { setFilter, setPage } = moviesSlicer.actions;
+
 export default moviesSlicer.reducer;

@@ -2,7 +2,7 @@ import { palette } from '../../styles/theme/theme';
 
 export const styles = {
   reservePageWrapper: {
-    height: '840px',
+    minHeight: '840px',
     background: palette.background.primary,
     padding: '36px 118px 66px 111px',
     display: 'flex',
@@ -15,15 +15,10 @@ export const styles = {
   },
   infoBlock: {
     width: '608px',
-    height: '320px',
-    padding: '24px 16px 12px',
+    minHeight: '320px',
+    padding: '24px 16px 24px 12px',
     background: palette.background.black,
     position: 'relative',
-  },
-  infoBlockTitle: {
-    '&:hover': {
-      textDecoration: 'underline',
-    },
   },
   infoBlockItem: {
     display: 'flex',

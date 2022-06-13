@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_URL, API_KEY } from '../config/constants';
+import { API_URL, API_KEY } from '../config/apiConstants';
 import { IParams } from '../store/reducers/movies/moviesTypes';
 
 export const fetchAllMovies = async (params: IParams) => {
@@ -22,7 +22,7 @@ export const fetchOneMovie = async (id: string) => {
   try {
     const { data } = await axios.get(`${API_URL}?apikey=${API_KEY}&i=${id}`);
     if (data.Response === 'False') {
-      throw Error(data.Error);
+      return data.Response;
     }
     return data;
   } catch (error) {

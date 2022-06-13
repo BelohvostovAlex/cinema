@@ -1,13 +1,10 @@
 import { palette } from '../../styles/theme/theme';
 
 export const styles = {
-  notFoundWrapper: {
+  nothingFoundWrapper: {
     width: '840px',
     height: '840px',
     background: palette.background.primary,
-  },
-  notFoundTitle: {
-    paddingTop: '36px',
-    paddingLeft: '112px',
+    padding: '36px 182px 36px 112px',
   },
 };

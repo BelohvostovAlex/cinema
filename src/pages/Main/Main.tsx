@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { SearchContainer } from '../../components/Search';
+import { Search } from '../../components/Search';
 import { MovieCardContainer } from '../../components/MovieCard';
-import { Pagination, Typography } from '@mui/material';
+import { Pagination } from '@mui/material';
 import { MainProps } from './interfaces';
+import { NotFoundBlock } from '../../components/NotFoundBlock/NotFoundBlock';
 
 export const Main: React.FC<MainProps> = ({
   movies,
@@ -14,7 +15,7 @@ export const Main: React.FC<MainProps> = ({
 }) => {
   return (
     <>
-      <SearchContainer page={currentPage} filterHandler={filterHandler} />
+      <Search page={currentPage} filterHandler={filterHandler} />
       {hasMovies ? (
         <>
           {movies.map(({ imdbID }) => (
@@ -28,10 +29,10 @@ export const Main: React.FC<MainProps> = ({
           />
         </>
       ) : (
-        <>
-          <Typography variant="h2">Nothing found</Typography>
-          <Typography variant="h2">Please try another one</Typography>
-        </>
+        <NotFoundBlock
+          title="Nothing found"
+          subtitle="Please try another one"
+        />
       )}
     </>
   );

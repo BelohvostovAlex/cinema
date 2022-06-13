@@ -1,28 +1,26 @@
 import React, { useEffect } from 'react';
 
 import { Main } from './Main';
-import { useAppDispatch } from '../../hooks/useAppDispatch';
-import { fetchMovies } from '../../store/reducers/movies/asyncActions/fetchMovies';
+import { useActions } from '../../hooks/useActions';
 import { useAppSelector } from '../../hooks/useAppSelector';
-import { setFilter, setPage } from '../../store/reducers/movies/moviesSlicer';
 
 export const MainContainer: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const { setFilter, setPage, fetchMovies } = useActions();
   const { movies, filter, page } = useAppSelector((state) => state.movies);
 
   const filterHandler = (value: string) => {
-    dispatch(setFilter(value));
+    setFilter(value);
   };
 
   const changeCurrentPage = (page: number) => {
-    dispatch(fetchMovies({ filter, page }));
-    dispatch(setPage(page));
+    fetchMovies({ filter, page });
+    setPage(page);
   };
 
   useEffect(() => {
-    dispatch(setFilter(filter));
-    dispatch(fetchMovies({ filter, page }));
-  }, [dispatch, filter, page]);
+    setFilter(filter);
+    fetchMovies({ filter, page });
+  }, [filter, page]);
 
   const hasMovies = !!movies.length;
 

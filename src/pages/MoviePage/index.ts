@@ -1,1 +1,1 @@
-export { MoviePageContainer } from './MoviePageContainer'
+export { MoviePageContainer as MoviePage } from './MoviePageContainer';

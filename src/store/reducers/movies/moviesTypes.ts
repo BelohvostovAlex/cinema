@@ -1,14 +1,14 @@
-import { IMovie } from "../../../models/IMovie";
+import { IMovie } from '../../../models/IMovie';
 
 export interface moviesInitialState {
-  movies: IMovie[],
-  isLoading: boolean,
-  isError: string
-  filter: string,
-  page: number
+  movies: IMovie[];
+  isLoading: boolean;
+  isError: string;
+  filter: string;
+  page: number;
 }
 
 export interface IParams {
-  filter: string,
-  page: number
+  filter: string;
+  page: number;
 }

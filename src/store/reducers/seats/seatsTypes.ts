@@ -1,5 +1,5 @@
-import { ITicket } from "../../../models/ITicket";
+import { ITicket } from '../../../models/ITicket';
 
 export interface seatsInitialState {
-    bookedMovies: ITicket[],
+  bookedMovies: ITicket[];
 }

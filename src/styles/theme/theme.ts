@@ -1,4 +1,4 @@
-import {createTheme} from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
 export const palette = {
   color: {
@@ -12,8 +12,8 @@ export const palette = {
     primary: '#2B2243',
     white: '#FFF',
     black: '#000000',
-  }
-}
+  },
+};
 
 export const theme = createTheme({
   typography: {
@@ -43,8 +43,8 @@ export const theme = createTheme({
           maxWidth: 1440,
           margin: '0px auto',
           boxSizing: 'border-box',
-        }
-      }
+        },
+      },
     },
     MuiButton: {
       styleOverrides: {
@@ -59,21 +59,21 @@ export const theme = createTheme({
           '&:hover': {
             background: palette.background.white,
             border: `3px solid ${palette.background.primary}`,
-            color: palette.color.primary
-          }
+            color: palette.color.primary,
+          },
         },
         containedSecondary: {
           background: palette.background.black,
           color: palette.color.white,
           border: `3px solid ${palette.color.black}`,
           justifyContent: 'flex-start',
-          padding: '18px 19px 13px 19px',
+          padding: '18px 19px 14px',
           lineHeight: '17px',
           '&:hover': {
             background: palette.background.black,
             border: `3px solid ${palette.color.white}`,
-            color: palette.color.white
-          }
+            color: palette.color.white,
+          },
         },
         containedSizeLarge: {
           width: '168px',
@@ -83,21 +83,21 @@ export const theme = createTheme({
           width: '140px',
           height: '49px',
         },
-      }
+      },
     },
     MuiTypography: {
       styleOverrides: {
         root: {
-          color: palette.color.main
-        }
-      }
+          color: palette.color.main,
+        },
+      },
     },
     MuiContainer: {
       styleOverrides: {
         root: {
-          maxWidth: '888px'
-        }
-      }
+          maxWidth: '888px',
+        },
+      },
     },
     MuiLink: {
       styleOverrides: {
@@ -115,16 +115,16 @@ export const theme = createTheme({
           color: palette.color.main,
           '&:hover': {
             textDecoration: 'underline',
-          }
-        }
-      }
+          },
+        },
+      },
     },
     MuiTextField: {
       styleOverrides: {
         root: {
           background: palette.color.main,
-        }
-      }
+        },
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
@@ -139,17 +139,17 @@ export const theme = createTheme({
           color: palette.color.black,
           '&::placeholder': {
             color: palette.color.black,
-            opacity: 1
-          }
+            opacity: 1,
+          },
         },
-      }
+      },
     },
     MuiCardContent: {
       styleOverrides: {
         root: {
-          padding: 0
-        }
-      }
+          padding: 0,
+        },
+      },
     },
     MuiTableCell: {
       styleOverrides: {
@@ -157,12 +157,12 @@ export const theme = createTheme({
           padding: 0,
           borderBottom: 'none',
         },
-      }
+      },
     },
     MuiPaginationItem: {
       styleOverrides: {
         root: {
-          color: palette.color.white
+          color: palette.color.white,
         },
         page: {
           '&.Mui-selected': {
@@ -171,19 +171,19 @@ export const theme = createTheme({
             '&:hover': {
               border: `3px solid ${palette.background.primary}`,
               background: palette.background.white,
-              color: palette.color.black
-            }
-          }
-        }
-      }
+              color: palette.color.black,
+            },
+          },
+        },
+      },
     },
     MuiPagination: {
       styleOverrides: {
         ul: {
           justifyContent: 'center',
-          marginBottom: '20px'
-        }
-      }
-    }
-  }
-})
+          marginBottom: '20px',
+        },
+      },
+    },
+  },
+});

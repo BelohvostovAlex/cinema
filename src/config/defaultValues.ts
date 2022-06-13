@@ -1,4 +1,4 @@
-import { ITicket } from "../models/ITicket";
+import { ITicket } from '../models/ITicket';
 
 export const defaultTicket: ITicket = {
   id: '',
@@ -8,6 +8,6 @@ export const defaultTicket: ITicket = {
   totalCheckedAmount: 0,
   totalCheckedPrice: 0,
   totalReservedAmount: 0,
-}
+};
 
-export const defaultFilter = 'star wars'
+export const defaultFilter = 'star wars';

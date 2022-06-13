@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Box, Typography } from '@mui/material';
+import { RegularLink } from '../RegularLink/RegularLink';
 import { UserSummaryBlockProps } from './interfaces';
 
 import { styles } from './styles';
-import { RegularLink } from '../RegularLink/RegularLink';
 
 export const UserSummaryBlock: React.FC<UserSummaryBlockProps> = ({
   movies,

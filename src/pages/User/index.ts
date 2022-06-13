@@ -1,1 +1,1 @@
-export {UserContainer as User} from './UserContainer'
+export { UserContainer as User } from './UserContainer';

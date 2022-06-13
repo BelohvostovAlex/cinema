@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Box, TextField, Button } from '@mui/material';
+import { SearchProps } from './interfaces';
 
 import { styles } from './styles';
-import { SearchProps } from './interfaces';
 
 export const Search: React.FC<SearchProps> = ({
   value,

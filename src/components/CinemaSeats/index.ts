@@ -1,1 +1,1 @@
-export {CinemaSeatsContainer as CinemaSeats} from './CinemaSeatsContainer'
+export { CinemaSeatsContainer as CinemaSeats } from './CinemaSeatsContainer';

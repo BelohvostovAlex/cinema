@@ -6,8 +6,8 @@ export const fetchMovies = createAsyncThunk(
   'movies/fetchMovies',
   async (params: IParams, thunkAPI) => {
     try {
-      const data = await fetchAllMovies(params)
-      return data
+      const data = await fetchAllMovies(params);
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

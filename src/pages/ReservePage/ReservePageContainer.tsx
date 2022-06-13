@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { findMovie } from '../../helpers/findMovie';
-import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useActions } from '../../hooks/useActions';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { useCurrentMovie } from '../../hooks/useCurrentMovie';
-import { setCheckedMovie } from '../../store/reducers/seats/seatsSlicer';
 import { ReservePage } from './ReservePage';
 import { defaultTicket } from '../../config/defaultValues';
 
 export const ReservePageContainer: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const { setCheckedMovie } = useActions();
   const { id } = useParams();
 
   const currentMovie = useCurrentMovie(id!);
@@ -26,8 +25,8 @@ export const ReservePageContainer: React.FC = () => {
     totalCheckedSeatsPrice = totalCheckedPrice;
   }
   useEffect(() => {
-    dispatch(setCheckedMovie({ ...defaultTicket, id: id!, title: Title }));
-  }, [Title, id, dispatch]);
+    setCheckedMovie({ ...defaultTicket, id: id!, title: Title });
+  }, [Title, id]);
 
   return (
     <ReservePage

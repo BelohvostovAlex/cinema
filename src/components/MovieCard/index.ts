@@ -1,1 +1,1 @@
-export { MovieCardContainer } from './MovieCardContainer'
+export { MovieCardContainer } from './MovieCardContainer';

@@ -1,7 +1,7 @@
 import React from 'react';
+
 import { findMovie } from '../../helpers/findMovie';
 import { useAppSelector } from '../../hooks/useAppSelector';
-
 import { CinemaSeats } from './CinemaSeats';
 import { CinemaSeatsContainerProps } from './iterfaces';
 

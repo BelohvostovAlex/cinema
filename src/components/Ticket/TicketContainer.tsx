@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Ticket } from './Ticket';
 import { TicketContainerProps } from './interfaces';
-import { useAppDispatch } from '../../hooks/useAppDispatch';
-import { addReservedSeat } from '../../store/reducers/seats/seatsSlicer';
+import { useActions } from '../../hooks/useActions';
 
 export const TicketContainer: React.FC<TicketContainerProps> = ({
   id,
@@ -11,10 +10,12 @@ export const TicketContainer: React.FC<TicketContainerProps> = ({
   amount,
   price,
 }) => {
-  const dispatch = useAppDispatch();
+  const { addReservedSeat } = useActions();
+
   const addReservedTickets = () => {
-    dispatch(addReservedSeat(id));
+    addReservedSeat(id);
   };
+
   return (
     <Ticket
       id={id}

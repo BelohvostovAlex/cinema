@@ -1,5 +1,5 @@
-import { fetchMovies } from "./fetchMovies"
+import { fetchMovies } from './fetchMovies';
 
 export const allAsyncActions = {
-  fetchMovies
-}
+  fetchMovies,
+};

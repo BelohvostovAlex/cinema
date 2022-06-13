@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { Main } from '../../pages/Main';
-import { MoviePageContainer } from '../../pages/MoviePage';
+import { MoviePage } from '../../pages/MoviePage';
 import { NotFound } from '../../pages/NotFound/NotFound';
-import { ReservePageContainer } from '../../pages/ReservePage';
+import { NothingFound } from '../../pages/NothingFound/NothingFound';
+import { ReservePage } from '../../pages/ReservePage';
 import { User } from '../../pages/User';
 
 export interface IRoute {
@@ -15,13 +17,15 @@ export enum Pathes {
   MOVIE = '/movie/:id',
   RESERVE = '/reserve/:id',
   USER = '/user',
-  ERROR = '/404'
+  ERROR = '/404',
+  NOTHING_FOUND = '/nothingFound',
 }
 
 export const publicRoutes: IRoute[] = [
   { path: Pathes.MAIN, element: Main },
-  { path: Pathes.MOVIE, element: MoviePageContainer },
-  { path: Pathes.RESERVE, element: ReservePageContainer },
+  { path: Pathes.MOVIE, element: MoviePage },
+  { path: Pathes.RESERVE, element: ReservePage },
   { path: Pathes.USER, element: User },
-  { path: Pathes.ERROR, element: NotFound }
+  { path: Pathes.ERROR, element: NotFound },
+  { path: Pathes.NOTHING_FOUND, element: NothingFound },
 ];

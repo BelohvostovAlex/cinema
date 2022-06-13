@@ -1,14 +1,14 @@
 export interface MovieCardContainerProps {
-  id: string
+  id: string;
 }
 
 export interface MovieCardProps {
-  id: string,
-  title: string,
-  actors: string,
-  runtime: string,
-  genre: string[],
-  plot: string,
-  poster: string,
-  year: string
+  id: string;
+  title: string;
+  actors: string;
+  runtime: string;
+  genre: string[];
+  plot: string;
+  poster: string;
+  year: string;
 }

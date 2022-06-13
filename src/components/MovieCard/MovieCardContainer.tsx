@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
+
 import { checkTagLength } from '../../helpers/checkTagLength';
 import { IMovie } from '../../models/IMovie';
 import { fetchOneMovie } from '../../services/webService';
-
 import { MovieCardContainerProps } from './interfaces';
-
 import { MovieCard } from './MovieCard';
 
 export const MovieCardContainer: React.FC<MovieCardContainerProps> = ({

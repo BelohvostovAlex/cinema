@@ -1,5 +1,5 @@
-import { ITicket } from "../../models/ITicket";
+import { ITicket } from '../../models/ITicket';
 
 export interface UserSummaryBlockProps {
-  movies: ITicket[]
+  movies: ITicket[];
 }

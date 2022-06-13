@@ -21,11 +21,7 @@ export const ReservePage: React.FC<ReservePageProps> = ({
       </Typography>
       <CinemaSeats title={title} id={id} />
       <Box sx={styles.infoBlock}>
-        <RegularLink
-          path={`/movie/${id}`}
-          title={title}
-          style={styles.infoBlockTitle}
-        />
+        <RegularLink path={`/movie/${id}`} title={title} />
         <Box sx={styles.infoBlockItem}>
           <Typography variant="h2">Tickets amount:</Typography>
           <Typography variant="h2">{totalAmount}</Typography>
@@ -34,11 +30,7 @@ export const ReservePage: React.FC<ReservePageProps> = ({
           <Typography variant="h2">Total cost:</Typography>
           <Typography variant="h2">{totalPrice}$</Typography>
         </Box>
-        <ButtonLink
-          path="/user"
-          title="Add"
-          className={styles.infoBlockButton}
-        />
+        <ButtonLink path="/user" title="Add" style={styles.infoBlockButton} />
       </Box>
     </Box>
   );

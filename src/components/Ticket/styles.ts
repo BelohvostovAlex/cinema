@@ -3,7 +3,7 @@ import { palette } from '../../styles/theme/theme';
 export const styles = {
   ticketWrapper: {
     width: '608px',
-    height: '221px',
+    minHeight: '221px',
     padding: '24px 16px',
     background: palette.background.black,
     marginBottom: '16px',
@@ -12,14 +12,13 @@ export const styles = {
   ticketInfo: {
     display: 'flex',
     justifyContent: 'space-between',
-    paddingBottom: '25px',
+    paddingBottom: '32px',
   },
   ticketTitle: {
     maxWidth: '400px',
   },
-  ticketButton: {
-    position: 'absolute',
-    bottom: '24px',
-    right: '16px',
+  ticketButtonWrapper: {
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
 };

@@ -8,11 +8,11 @@ import {
   Typography,
   Box,
 } from '@mui/material';
-
-import { styles } from './styles';
 import { ButtonLink } from '../ButtonLink';
 import { ButtonLinkColor } from '../ButtonLink/interfaces';
 import { MovieCardProps } from './interfaces';
+
+import { styles } from './styles';
 
 export const MovieCard: React.FC<MovieCardProps> = ({
   id,
@@ -61,7 +61,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
             </Typography>
           </Box>
           <ButtonLink
-            className={styles.movieCardLinkButton}
+            style={styles.movieCardLinkButton}
             path={`/movie/${id}`}
             title="More info..."
             color={ButtonLinkColor.SECONDARY}

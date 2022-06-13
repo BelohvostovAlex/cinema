@@ -12,13 +12,13 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
   title,
   path,
   variant = ButtonLinkVariant.CONTAINED,
-  className,
+  style,
   color = ButtonLinkColor.PRIMARY,
   onClick,
 }) => {
   return (
     <Link to={path}>
-      <Button variant={variant} color={color} sx={className} onClick={onClick}>
+      <Button variant={variant} color={color} sx={style} onClick={onClick}>
         {title}
       </Button>
     </Link>

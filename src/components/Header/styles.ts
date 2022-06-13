@@ -1,4 +1,4 @@
-import { palette } from "../../styles/theme/theme"
+import { palette } from '../../styles/theme/theme';
 
 export const styles = {
   header: {
@@ -6,17 +6,18 @@ export const styles = {
     height: '160px',
     background: palette.background.primary,
     padding: '42px 0px',
-    marginBottom: '24px'
+    marginBottom: '24px',
   },
   headerWrapper: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   headerTitle: {
-    marginBottom: '30px'
+    marginBottom: '30px',
   },
   headerLink: {
-    cursor: 'pointer'
-  }
-}
+    paddingTop: '5px',
+    cursor: 'pointer',
+  },
+};
