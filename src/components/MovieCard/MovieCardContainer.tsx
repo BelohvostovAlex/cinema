@@ -1,25 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 
 import { checkTagLength } from '../../helpers/checkTagLength';
-import { IMovie } from '../../models/IMovie';
-import { fetchOneMovie } from '../../services/webService';
+import { useCurrentMovie } from '../../hooks/useCurrentMovie';
 import { MovieCardContainerProps } from './interfaces';
 import { MovieCard } from './MovieCard';
 
 export const MovieCardContainer: React.FC<MovieCardContainerProps> = ({
   id,
 }) => {
-  const [currentMovie, setCurrentMovie] = useState({} as IMovie);
-
-  const getMovie = useCallback(async () => {
-    const data = await fetchOneMovie(id);
-    setCurrentMovie(data);
-  }, [id]);
-
-  useEffect(() => {
-    getMovie();
-  }, [getMovie]);
-
+  const currentMovie = useCurrentMovie(id);
   const { Actors, Runtime, Genre, Plot, Poster, Year, Title } = currentMovie;
 
   const genres = checkTagLength(Genre);

@@ -10,6 +10,7 @@ import { defaultTicket } from '../../config/defaultValues';
 
 export const ReservePageContainer: React.FC = () => {
   const { setCheckedMovie } = useActions();
+
   const { id } = useParams();
 
   const currentMovie = useCurrentMovie(id!);
@@ -26,6 +27,7 @@ export const ReservePageContainer: React.FC = () => {
   }
   useEffect(() => {
     setCheckedMovie({ ...defaultTicket, id: id!, title: Title });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Title, id]);
 
   return (

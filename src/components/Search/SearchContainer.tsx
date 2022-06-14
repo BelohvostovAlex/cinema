@@ -16,7 +16,7 @@ export const SearchContainer: React.FC<SearchContainerProps> = ({
   const getSearchedMovies = () => {
     fetchMovies({ filter: value.length > 0 ? value : defaultFilter, page });
     filterHandler(value.length > 0 ? value : defaultFilter);
-  }; // should check it
+  };
 
   return (
     <Search

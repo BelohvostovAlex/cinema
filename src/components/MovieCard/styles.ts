@@ -28,7 +28,7 @@ export const styles = {
   movieCardContent: {
     marginLeft: '28px',
     width: '370px',
-    // height: '226px', check
+    height: '226px', 
     overflow: 'hidden',
   },
   movieCardTitle: {

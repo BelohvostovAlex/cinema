@@ -30,6 +30,7 @@ export const CinemaSeatsContainer: React.FC<CinemaSeatsContainerProps> = ({
   const isChecked = (seat: string) => {
     return currentMovie?.checked.includes(seat) ? true : false;
   };
+
   const isReserved = (seat: string) => {
     return currentMovie?.reserved.includes(seat) ? true : false;
   };

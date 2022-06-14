@@ -20,6 +20,7 @@ export const MainContainer: React.FC = () => {
   useEffect(() => {
     setFilter(filter);
     fetchMovies({ filter, page });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, page]);
 
   const hasMovies = !!movies.length;
