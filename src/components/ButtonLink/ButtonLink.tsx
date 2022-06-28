@@ -17,7 +17,7 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
   onClick,
 }) => {
   return (
-    <Link to={path}>
+    <Link to={path} data-testid="card-link">
       <Button variant={variant} color={color} sx={style} onClick={onClick}>
         {title}
       </Button>

@@ -25,7 +25,7 @@ export const MoviePage: React.FC<MoviePageProps> = ({
   addCurrentMovie,
 }) => {
   return (
-    <Box>
+    <Box data-testid="card-details-page">
       <Card sx={styles.moviePageWrapper}>
         <Box sx={styles.moviePageHeader}>
           <CardMedia

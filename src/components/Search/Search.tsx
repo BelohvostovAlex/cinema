@@ -18,6 +18,7 @@ export const Search: React.FC<SearchProps> = ({
           sx={styles.searchInput}
           value={value}
           onChange={handleValue}
+          data-testid="search-input"
         />
         <Button
           variant="contained"

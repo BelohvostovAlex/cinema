@@ -18,7 +18,7 @@ export const CinemaSeats: React.FC<CinemaSeatsProps> = ({
   isReserved,
 }) => {
   return (
-    <Table sx={styles.seatsTable}>
+    <Table sx={styles.seatsTable} data-testid="seats-table">
       <TableBody>
         {seatsRows.map((row) => (
           <TableRow key={row}>

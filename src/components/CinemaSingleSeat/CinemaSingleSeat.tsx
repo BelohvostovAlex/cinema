@@ -12,5 +12,5 @@ export const CinemaSingleSeat: React.FC<CinemaSingleSeatProps> = ({
 }) => {
   const styles = getStyles({ isChecked, isReserved });
 
-  return <Box sx={styles} onClick={addSeat} />;
+  return <Box sx={styles} onClick={addSeat} data-testid="single-seat" />;
 };

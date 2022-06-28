@@ -25,7 +25,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
   year,
 }) => {
   return (
-    <Card sx={styles.movieCard}>
+    <Card sx={styles.movieCard} data-testid="movie-card">
       <CardMedia
         component="img"
         image={poster}
