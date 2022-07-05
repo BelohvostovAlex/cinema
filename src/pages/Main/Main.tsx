@@ -6,6 +6,8 @@ import { Pagination } from '@mui/material';
 import { MainProps } from './interfaces';
 import { NotFoundBlock } from '../../components/NotFoundBlock/NotFoundBlock';
 
+import { motion } from 'framer-motion';
+
 export const Main: React.FC<MainProps> = ({
   movies,
   hasMovies,
@@ -14,7 +16,11 @@ export const Main: React.FC<MainProps> = ({
   changeCurrentPage,
 }) => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Search page={currentPage} filterHandler={filterHandler} />
       {hasMovies ? (
         <>
@@ -34,6 +40,6 @@ export const Main: React.FC<MainProps> = ({
           subtitle="Please try another one"
         />
       )}
-    </>
+    </motion.div>
   );
 };
