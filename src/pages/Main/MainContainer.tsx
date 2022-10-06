@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import { Main } from './Main';
-import { useActions } from '../../hooks/useActions';
-import { useAppSelector } from '../../hooks/useAppSelector';
+import { Main } from "./Main";
+import { useActions } from "../../hooks/useActions";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 export const MainContainer: React.FC = () => {
   const { setFilter, setPage, fetchMovies } = useActions();
@@ -20,7 +20,6 @@ export const MainContainer: React.FC = () => {
   useEffect(() => {
     setFilter(filter);
     fetchMovies({ filter, page });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, page]);
 
   const hasMovies = !!movies.length;
