@@ -22,7 +22,7 @@ export const MainContainer: FunctionComponent = () => {
     fetchMovies({ filter, page });
   }, [filter, page]);
 
-  const hasMovies = !!movies.length;
+  const hasMovies = movies && !!movies.length;
 
   return (
     <Main
