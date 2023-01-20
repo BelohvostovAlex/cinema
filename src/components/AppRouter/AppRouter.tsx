@@ -1,11 +1,10 @@
-import React from 'react';
+import { FunctionComponent } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { publicRoutes } from './interfaces';
+import { publicRoutes } from "./interfaces";
 
-import { AnimatePresence } from 'framer-motion';
-
-export const AppRouter: React.FC = () => {
+export const AppRouter: FunctionComponent = () => {
   const location = useLocation();
   return (
     <AnimatePresence>
@@ -17,7 +16,7 @@ export const AppRouter: React.FC = () => {
             element={<route.element />}
           />
         ))}
-        <Route path="*" element={<Navigate to={'/404'} />} />
+        <Route path="*" element={<Navigate to={"/404"} />} />
       </Routes>
     </AnimatePresence>
   );

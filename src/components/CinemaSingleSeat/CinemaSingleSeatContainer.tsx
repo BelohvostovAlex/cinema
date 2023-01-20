@@ -1,10 +1,11 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { CinemaSingleSeatContainerProps } from './interfaces';
-import { useActions } from '../../hooks/useActions';
-import { CinemaSingleSeat } from './CinemaSingleSeat';
+import { useActions } from "../../hooks/useActions";
+import { CinemaSingleSeat } from "./CinemaSingleSeat";
 
-export const CinemaSingleSeatContainer: React.FC<
+import { CinemaSingleSeatContainerProps } from "./interfaces";
+
+export const CinemaSingleSeatContainer: FunctionComponent<
   CinemaSingleSeatContainerProps
 > = ({ isChecked, isReserved, seatNumber, checkPrice, id, title, row }) => {
   const { addCheckedSeat } = useActions();

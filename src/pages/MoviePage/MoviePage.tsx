@@ -1,13 +1,13 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box, CardContent, Typography, CardMedia, Card } from '@mui/material';
-import { ButtonLink } from '../../components/ButtonLink';
-import { MoviePageProps } from './interfaces';
-import { motion } from 'framer-motion';
+import { Box, CardContent, Typography, CardMedia, Card } from "@mui/material";
+import { ButtonLink } from "../../components/ButtonLink";
+import { motion } from "framer-motion";
 
-import { styles } from './styles';
+import { MoviePageProps } from "./interfaces";
+import { styles } from "./styles";
 
-export const MoviePage: React.FC<MoviePageProps> = ({
+export const MoviePage: FunctionComponent<MoviePageProps> = ({
   id,
   actors,
   awards,

@@ -1,9 +1,10 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Typography } from '@mui/material';
-import { NotFoundBlockProps } from './interfaces';
+import { Typography } from "@mui/material";
 
-export const NotFoundBlock: React.FC<NotFoundBlockProps> = ({
+import { NotFoundBlockProps } from "./interfaces";
+
+export const NotFoundBlock: FunctionComponent<NotFoundBlockProps> = ({
   title,
   subtitle,
 }) => {

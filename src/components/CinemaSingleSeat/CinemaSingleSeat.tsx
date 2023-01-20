@@ -1,16 +1,16 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box } from '@mui/material';
-import { CinemaSingleSeatProps } from './interfaces';
+import { Box } from "@mui/material";
 
-import { getStyles } from './styles';
+import { CinemaSingleSeatProps } from "./interfaces";
+import { getStyles } from "./styles";
 
-export const CinemaSingleSeat: React.FC<CinemaSingleSeatProps> = ({
+export const CinemaSingleSeat: FunctionComponent<CinemaSingleSeatProps> = ({
   isChecked,
   isReserved,
   addSeat,
 }) => {
   const styles = getStyles({ isChecked, isReserved });
 
-  return <Box sx={styles} onClick={addSeat} data-testid="single-seat" />;
+  return <Box sx={styles} onClick={addSeat} />;
 };

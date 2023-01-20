@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box, TextField, Button } from '@mui/material';
-import { SearchProps } from './interfaces';
+import { Box, TextField, Button } from "@mui/material";
 
-import { styles } from './styles';
+import { SearchProps } from "./interfaces";
+import { styles } from "./styles";
 
-export const Search: React.FC<SearchProps> = ({
+export const Search: FunctionComponent<SearchProps> = ({
   value,
   handleValue,
   getMovies,

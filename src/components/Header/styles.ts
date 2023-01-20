@@ -1,23 +1,23 @@
-import { palette } from '../../styles/theme/theme';
+import { palette } from "../../styles/theme/theme";
 
 export const styles = {
   header: {
-    width: '1440px',
-    height: '160px',
+    width: "100%",
+    height: "160px",
     background: palette.background.primary,
-    padding: '42px 0px',
-    marginBottom: '24px',
+    padding: "42px 0px",
+    marginBottom: "24px",
   },
   headerWrapper: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
   },
   headerTitle: {
-    marginBottom: '30px',
+    marginBottom: "30px",
   },
   headerLink: {
-    paddingTop: '5px',
-    cursor: 'pointer',
+    paddingTop: "5px",
+    cursor: "pointer",
   },
 };

@@ -1,13 +1,13 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box, Typography } from '@mui/material';
-import { Ticket } from '../../components/Ticket';
-import { UserSummaryBlock } from '../../components/UserSummaryBlock';
-import { UserProps } from './interfaces';
+import { Box, Typography } from "@mui/material";
+import { Ticket } from "../../components/Ticket";
+import { UserSummaryBlock } from "../../components/UserSummaryBlock";
 
-import { styles } from './styles';
+import { UserProps } from "./interfaces";
+import { styles } from "./styles";
 
-export const User: React.FC<UserProps> = ({ movies }) => {
+export const User: FunctionComponent<UserProps> = ({ movies }) => {
   return (
     <Box sx={styles.userWrapper}>
       <Typography variant="h2" sx={styles.userTitle}>

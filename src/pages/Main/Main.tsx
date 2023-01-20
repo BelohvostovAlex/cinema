@@ -1,14 +1,15 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Search } from '../../components/Search';
-import { MovieCardContainer } from '../../components/MovieCard';
-import { Pagination } from '@mui/material';
-import { MainProps } from './interfaces';
-import { NotFoundBlock } from '../../components/NotFoundBlock/NotFoundBlock';
+import { motion } from "framer-motion";
+import { Search } from "../../components/Search";
+import { MovieCardContainer } from "../../components/MovieCard";
+import { NotFoundBlock } from "../../components/NotFoundBlock/NotFoundBlock";
 
-import { motion } from 'framer-motion';
+import { Pagination } from "@mui/material";
 
-export const Main: React.FC<MainProps> = ({
+import { MainProps } from "./interfaces";
+
+export const Main: FunctionComponent<MainProps> = ({
   movies,
   hasMovies,
   currentPage,
@@ -29,7 +30,7 @@ export const Main: React.FC<MainProps> = ({
           ))}
           <Pagination
             count={10}
-            color={'primary'}
+            color={"primary"}
             page={currentPage}
             onChange={(e, page) => changeCurrentPage(page)}
           />

@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { FunctionComponent, useEffect } from "react";
 
 import { Main } from "./Main";
 import { useActions } from "../../hooks/useActions";
 import { useAppSelector } from "../../hooks/useAppSelector";
 
-export const MainContainer: React.FC = () => {
+export const MainContainer: FunctionComponent = () => {
   const { setFilter, setPage, fetchMovies } = useActions();
   const { movies, filter, page } = useAppSelector((state) => state.movies);
 

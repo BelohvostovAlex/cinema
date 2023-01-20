@@ -1,15 +1,15 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { FunctionComponent } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-import { Box, Typography, Link, Container } from '@mui/material';
-import { Pathes } from '../AppRouter/interfaces';
-import { HeaderProps } from './interfaces';
+import { Box, Typography, Link, Container } from "@mui/material";
 
-import { styles } from './styles';
+import { Pathes } from "../AppRouter/interfaces";
+import { HeaderProps } from "./interfaces";
+import { styles } from "./styles";
 
-export const Header: React.FC<HeaderProps> = ({
-  title = 'Welcome to our cinema',
-  subtitle = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, labore.',
+export const Header: FunctionComponent<HeaderProps> = ({
+  title = "Welcome to our cinema",
+  subtitle = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, labore.",
 }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();

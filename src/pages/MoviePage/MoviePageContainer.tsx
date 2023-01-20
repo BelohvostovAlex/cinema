@@ -1,12 +1,13 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import { FunctionComponent } from "react";
+import { useParams } from "react-router-dom";
 
-import { useActions } from '../../hooks/useActions';
-import { useCurrentMovie } from '../../hooks/useCurrentMovie';
-import { defaultTicket } from '../../config/defaultValues';
-import { MoviePage } from './MoviePage';
+import { MoviePage } from "./MoviePage";
 
-export const MoviePageContainer: React.FC = () => {
+import { useActions } from "../../hooks/useActions";
+import { useCurrentMovie } from "../../hooks/useCurrentMovie";
+import { defaultTicket } from "../../config/defaultValues";
+
+export const MoviePageContainer: FunctionComponent = () => {
   const { setCheckedMovie } = useActions();
 
   const { id } = useParams();

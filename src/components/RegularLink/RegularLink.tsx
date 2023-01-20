@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
 
-import { Typography } from '@mui/material';
-import { RegularLinkProps } from './interfaces';
+import { Typography } from "@mui/material";
 
-import { getStyles } from './styles';
+import { RegularLinkProps } from "./interfaces";
+import { getStyles } from "./styles";
 
-export const RegularLink: React.FC<RegularLinkProps> = ({
+export const RegularLink: FunctionComponent<RegularLinkProps> = ({
   path,
   title,
   style,

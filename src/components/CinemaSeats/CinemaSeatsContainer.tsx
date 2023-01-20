@@ -1,9 +1,9 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { findMovie } from '../../helpers/findMovie';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { CinemaSeats } from './CinemaSeats';
-import { CinemaSeatsContainerProps } from './iterfaces';
+import { findMovie } from "../../helpers/findMovie";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { CinemaSeats } from "./CinemaSeats";
+import { CinemaSeatsContainerProps } from "./iterfaces";
 
 const price = {
   A: 8,
@@ -13,10 +13,9 @@ const price = {
   E: 14,
 };
 
-export const CinemaSeatsContainer: React.FC<CinemaSeatsContainerProps> = ({
-  id,
-  title,
-}) => {
+export const CinemaSeatsContainer: FunctionComponent<
+  CinemaSeatsContainerProps
+> = ({ id, title }) => {
   const checkPrice = (row: string) => {
     const currentPrice = Object.entries(price).find(([key, value]) => {
       return key === row;

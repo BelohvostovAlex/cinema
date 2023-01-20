@@ -1,15 +1,15 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box, Typography } from '@mui/material';
-import { CinemaSeats } from '../../components/CinemaSeats';
-import { ButtonLink } from '../../components/ButtonLink';
-import { RegularLink } from '../../components/RegularLink/RegularLink';
-import { ReservePageProps } from './interfaces';
-import { motion } from 'framer-motion';
+import { Box, Typography } from "@mui/material";
+import { CinemaSeats } from "../../components/CinemaSeats";
+import { ButtonLink } from "../../components/ButtonLink";
+import { RegularLink } from "../../components/RegularLink/RegularLink";
+import { ReservePageProps } from "./interfaces";
+import { motion } from "framer-motion";
 
-import { styles } from './styles';
+import { styles } from "./styles";
 
-export const ReservePage: React.FC<ReservePageProps> = ({
+export const ReservePage: FunctionComponent<ReservePageProps> = ({
   title,
   id,
   totalAmount,
@@ -36,7 +36,11 @@ export const ReservePage: React.FC<ReservePageProps> = ({
             <Typography variant="h2">Total cost:</Typography>
             <Typography variant="h2">{totalPrice}$</Typography>
           </Box>
-          <ButtonLink path="/user" title="Add" style={styles.infoBlockButton} />
+          <ButtonLink
+            path={totalAmount ? "/user" : `/reserve/${id}`}
+            title="Add"
+            style={styles.infoBlockButton}
+          />
         </Box>
       </Box>
     </motion.div>
