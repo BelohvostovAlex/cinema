@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import { Container } from '@mui/material';
-import { AppRouter } from './components/AppRouter/AppRouter';
-import { Header } from './components/Header';
+import { AppRouter } from "./components/AppRouter/AppRouter";
+import { AppLayout } from "./layouts/AppLayout";
 
-import './index.css';
+import "./index.css";
 
 export const App: React.FC = () => {
   return (
-    <>
-      <Header />
-      <Container maxWidth={false}>
-        <AppRouter />
-      </Container>
-    </>
+    <AppLayout>
+      <AppRouter />
+    </AppLayout>
   );
 };

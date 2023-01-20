@@ -1,17 +1,19 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Search } from './Search';
-import { useInput } from '../../hooks/useInput';
-import { SearchContainerProps } from './interfaces';
-import { useActions } from '../../hooks/useActions';
-import { defaultFilter } from '../../config/defaultValues';
+import { Search } from "./Search";
 
-export const SearchContainer: React.FC<SearchContainerProps> = ({
+import { useInput } from "../../hooks/useInput";
+import { useActions } from "../../hooks/useActions";
+import { defaultFilter } from "../../config/defaultValues";
+
+import { SearchContainerProps } from "./interfaces";
+
+export const SearchContainer: FunctionComponent<SearchContainerProps> = ({
   page,
   filterHandler,
 }) => {
   const { fetchMovies } = useActions();
-  const [value, handleValue] = useInput('');
+  const [value, handleValue] = useInput("");
 
   const getSearchedMovies = () => {
     fetchMovies({ filter: value.length > 0 ? value : defaultFilter, page });

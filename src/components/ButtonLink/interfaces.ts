@@ -1,23 +1,24 @@
-import { SxProps } from '@mui/material';
+import { SxProps } from "@mui/material";
 
 export enum ButtonLinkVariant {
-  OUTLINED = 'outlined',
-  CONTAINED = 'contained',
-  TEXT = 'text',
+  OUTLINED = "outlined",
+  CONTAINED = "contained",
+  TEXT = "text",
 }
 
 export enum ButtonLinkColor {
-  ERROR = 'error',
-  INFO = 'info',
-  INHERIT = 'inherit',
-  PRIMARY = 'primary',
-  WARNING = 'warning',
-  SUCCESS = 'success',
-  SECONDARY = 'secondary',
+  ERROR = "error",
+  INFO = "info",
+  INHERIT = "inherit",
+  PRIMARY = "primary",
+  WARNING = "warning",
+  SUCCESS = "success",
+  SECONDARY = "secondary",
 }
 
 export interface ButtonLinkProps {
   title: string;
+  disabled?: boolean;
   style?: SxProps;
   variant?: ButtonLinkVariant;
   path: string;

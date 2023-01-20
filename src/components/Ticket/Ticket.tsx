@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box, Button, Typography } from '@mui/material';
-import { RegularLink } from '../RegularLink/RegularLink';
-import { TicketProps } from './interfaces';
+import { Box, Button, Typography } from "@mui/material";
+import { RegularLink } from "../RegularLink/RegularLink";
 
-import { styles } from './styles';
+import { TicketProps } from "./interfaces";
+import { styles } from "./styles";
 
-export const Ticket: React.FC<TicketProps> = ({
+export const Ticket: FunctionComponent<TicketProps> = ({
   id,
   title,
   amount,
@@ -22,7 +22,7 @@ export const Ticket: React.FC<TicketProps> = ({
           style={styles.ticketTitle}
         />
         <Typography variant="h2">
-          {amount} {amount > 1 ? 'tickets' : 'ticket'}
+          {amount} {amount > 1 ? "tickets" : "ticket"}
         </Typography>
       </Box>
       <Box sx={styles.ticketInfo}>

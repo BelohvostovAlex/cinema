@@ -1,11 +1,13 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { checkTagLength } from '../../helpers/checkTagLength';
-import { useCurrentMovie } from '../../hooks/useCurrentMovie';
-import { MovieCardContainerProps } from './interfaces';
-import { MovieCard } from './MovieCard';
+import { MovieCard } from "./MovieCard";
 
-export const MovieCardContainer: React.FC<MovieCardContainerProps> = ({
+import { checkTagLength } from "../../helpers/checkTagLength";
+import { useCurrentMovie } from "../../hooks/useCurrentMovie";
+
+import { MovieCardContainerProps } from "./interfaces";
+
+export const MovieCardContainer: FunctionComponent<MovieCardContainerProps> = ({
   id,
 }) => {
   const currentMovie = useCurrentMovie(id);

@@ -1,12 +1,15 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Search } from '../../components/Search';
-import { MovieCardContainer } from '../../components/MovieCard';
-import { Pagination } from '@mui/material';
-import { MainProps } from './interfaces';
-import { NotFoundBlock } from '../../components/NotFoundBlock/NotFoundBlock';
+import { motion } from "framer-motion";
+import { Search } from "../../components/Search";
+import { MovieCardContainer } from "../../components/MovieCard";
+import { NotFoundBlock } from "../../components/NotFoundBlock/NotFoundBlock";
 
-export const Main: React.FC<MainProps> = ({
+import { Pagination } from "@mui/material";
+
+import { MainProps } from "./interfaces";
+
+export const Main: FunctionComponent<MainProps> = ({
   movies,
   hasMovies,
   currentPage,
@@ -14,7 +17,11 @@ export const Main: React.FC<MainProps> = ({
   changeCurrentPage,
 }) => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Search page={currentPage} filterHandler={filterHandler} />
       {hasMovies ? (
         <>
@@ -23,7 +30,7 @@ export const Main: React.FC<MainProps> = ({
           ))}
           <Pagination
             count={10}
-            color={'primary'}
+            color={"primary"}
             page={currentPage}
             onChange={(e, page) => changeCurrentPage(page)}
           />
@@ -34,6 +41,6 @@ export const Main: React.FC<MainProps> = ({
           subtitle="Please try another one"
         />
       )}
-    </>
+    </motion.div>
   );
 };

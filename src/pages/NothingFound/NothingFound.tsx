@@ -1,14 +1,18 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box } from '@mui/material';
-import { NotFoundBlock } from '../../components/NotFoundBlock/NotFoundBlock';
+import { Box } from "@mui/material";
+import { NotFoundBlock } from "../../components/NotFoundBlock/NotFoundBlock";
 
-import { styles } from './styles';
+import { styles } from "./styles";
+import { NothingFoundProps } from "./interface";
 
-export const NothingFound: React.FC = () => {
+export const NothingFound: FunctionComponent<NothingFoundProps> = ({
+  title = "Oooops...",
+  subtitle = "Something went wrong",
+}) => {
   return (
     <Box sx={styles.nothingFoundWrapper}>
-      <NotFoundBlock title="Oooops..." subtitle="Something went wrong" />
+      <NotFoundBlock title={title} subtitle={subtitle} />
     </Box>
   );
 };

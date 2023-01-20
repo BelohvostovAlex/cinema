@@ -1,37 +1,37 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const palette = {
   color: {
-    main: '#EEEAEA',
-    primary: '#2B2243',
-    white: '#FFF',
-    black: '#000000',
+    main: "#EEEAEA",
+    primary: "#2B2243",
+    white: "#FFF",
+    black: "#000000",
   },
   background: {
-    main: '#171515',
-    primary: '#2B2243',
-    white: '#FFF',
-    black: '#000000',
+    main: "#171515",
+    primary: "#2B2243",
+    white: "#FFF",
+    black: "#000000",
   },
 };
 
 export const theme = createTheme({
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: "Montserrat",
     h2: {
-      fontSize: '24px',
+      fontSize: "24px",
       fontWeight: 700,
-      lineHeight: '29.26px',
+      lineHeight: "29.26px",
     },
     h3: {
-      fontSize: '14px',
+      fontSize: "14px",
       fontWeight: 400,
-      lineHeight: '17.07px',
+      lineHeight: "17.07px",
     },
     h4: {
-      fontSize: '10px',
+      fontSize: "10px",
       fontWeight: 400,
-      lineHeight: '12.19px',
+      lineHeight: "12.19px",
     },
   },
   components: {
@@ -40,23 +40,21 @@ export const theme = createTheme({
         body: {
           color: palette.color.main,
           background: palette.background.main,
-          maxWidth: 1440,
-          margin: '0px auto',
-          boxSizing: 'border-box',
+          boxSizing: "border-box",
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '5px',
-          textTransform: 'unset',
-          transition: 'unset',
+          borderRadius: "5px",
+          textTransform: "unset",
+          transition: "unset",
         },
         containedPrimary: {
           background: palette.background.primary,
           color: palette.color.main,
-          '&:hover': {
+          "&:hover": {
             background: palette.background.white,
             border: `3px solid ${palette.background.primary}`,
             color: palette.color.primary,
@@ -66,22 +64,22 @@ export const theme = createTheme({
           background: palette.background.black,
           color: palette.color.white,
           border: `3px solid ${palette.color.black}`,
-          justifyContent: 'flex-start',
-          padding: '18px 19px 14px',
-          lineHeight: '17px',
-          '&:hover': {
+          justifyContent: "flex-start",
+          padding: "18px 19px 14px",
+          lineHeight: "17px",
+          "&:hover": {
             background: palette.background.black,
             border: `3px solid ${palette.color.white}`,
             color: palette.color.white,
           },
         },
         containedSizeLarge: {
-          width: '168px',
-          height: '85px',
+          width: "168px",
+          height: "85px",
         },
         containedSizeMedium: {
-          width: '140px',
-          height: '49px',
+          width: "140px",
+          height: "49px",
         },
       },
     },
@@ -95,26 +93,26 @@ export const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          maxWidth: '888px',
+          maxWidth: "888px",
         },
       },
     },
     MuiLink: {
       styleOverrides: {
         root: {
-          fontSize: '14px',
-          lineHeight: '17.07px',
-          width: 'auto',
-          minWidth: '80px',
-          minHeight: '26px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
+          fontSize: "14px",
+          lineHeight: "17.07px",
+          width: "auto",
+          minWidth: "80px",
+          minHeight: "26px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
           fontWeight: 400,
-          textDecoration: 'none',
+          textDecoration: "none",
           color: palette.color.main,
-          '&:hover': {
-            textDecoration: 'underline',
+          "&:hover": {
+            textDecoration: "underline",
           },
         },
       },
@@ -129,15 +127,15 @@ export const theme = createTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         notchedOutline: {
-          border: 'none',
+          border: "none",
         },
         input: {
-          padding: '25px 19px ',
-          fontSize: '24px',
-          lineHeight: '29px',
+          padding: "25px 19px ",
+          fontSize: "24px",
+          lineHeight: "29px",
           fontWeight: 400,
           color: palette.color.black,
-          '&::placeholder': {
+          "&::placeholder": {
             color: palette.color.black,
             opacity: 1,
           },
@@ -155,7 +153,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           padding: 0,
-          borderBottom: 'none',
+          borderBottom: "none",
         },
       },
     },
@@ -165,10 +163,10 @@ export const theme = createTheme({
           color: palette.color.white,
         },
         page: {
-          '&.Mui-selected': {
+          "&.Mui-selected": {
             background: palette.background.primary,
             border: `3px solid ${palette.background.primary}`,
-            '&:hover': {
+            "&:hover": {
               border: `3px solid ${palette.background.primary}`,
               background: palette.background.white,
               color: palette.color.black,
@@ -180,8 +178,8 @@ export const theme = createTheme({
     MuiPagination: {
       styleOverrides: {
         ul: {
-          justifyContent: 'center',
-          marginBottom: '20px',
+          justifyContent: "center",
+          marginBottom: "20px",
         },
       },
     },

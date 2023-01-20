@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
 import {
   Card,
@@ -7,14 +7,14 @@ import {
   CardActions,
   Typography,
   Box,
-} from '@mui/material';
-import { ButtonLink } from '../ButtonLink';
-import { ButtonLinkColor } from '../ButtonLink/interfaces';
-import { MovieCardProps } from './interfaces';
+} from "@mui/material";
+import { ButtonLink } from "../ButtonLink";
 
-import { styles } from './styles';
+import { ButtonLinkColor } from "../ButtonLink/interfaces";
+import { MovieCardProps } from "./interfaces";
+import { styles } from "./styles";
 
-export const MovieCard: React.FC<MovieCardProps> = ({
+export const MovieCard: FunctionComponent<MovieCardProps> = ({
   id,
   title,
   actors,
@@ -25,7 +25,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({
   year,
 }) => {
   return (
-    <Card sx={styles.movieCard}>
+    <Card sx={styles.movieCard} data-testid="movie-card">
       <CardMedia
         component="img"
         image={poster}

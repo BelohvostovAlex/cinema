@@ -1,12 +1,12 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box, Typography } from '@mui/material';
-import { RegularLink } from '../RegularLink/RegularLink';
-import { UserSummaryBlockProps } from './interfaces';
+import { Box, Typography } from "@mui/material";
+import { RegularLink } from "../RegularLink/RegularLink";
 
-import { styles } from './styles';
+import { UserSummaryBlockProps } from "./interfaces";
+import { styles } from "./styles";
 
-export const UserSummaryBlock: React.FC<UserSummaryBlockProps> = ({
+export const UserSummaryBlock: FunctionComponent<UserSummaryBlockProps> = ({
   movies,
 }) => {
   return (
@@ -21,7 +21,7 @@ export const UserSummaryBlock: React.FC<UserSummaryBlockProps> = ({
           />
           <Typography variant="h2">
             {totalReservedAmount}
-            {totalReservedAmount > 1 ? ' tickets' : ' ticket'}
+            {totalReservedAmount > 1 ? " tickets" : " ticket"}
           </Typography>
         </Box>
       ))}

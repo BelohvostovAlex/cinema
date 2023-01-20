@@ -1,10 +1,10 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from "@mui/material";
 
-import { styles } from './styles';
+import { styles } from "./styles";
 
-export const NotFound: React.FC = () => {
+export const NotFound: FunctionComponent = () => {
   return (
     <Box sx={styles.notFoundWrapper}>
       <Typography variant="h2" sx={styles.notFoundTitle}>

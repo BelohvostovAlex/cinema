@@ -1,9 +1,10 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { UserSummaryBlock } from './UserSummaryBlock';
+import { UserSummaryBlock } from "./UserSummaryBlock";
 
-export const UserSummaryBlockContainer: React.FC = () => {
+import { useAppSelector } from "../../hooks/useAppSelector";
+
+export const UserSummaryBlockContainer: FunctionComponent = () => {
   const { bookedMovies } = useAppSelector((state) => state.seats);
 
   const reservedMovies = bookedMovies.filter(

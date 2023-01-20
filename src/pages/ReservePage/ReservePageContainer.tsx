@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { FunctionComponent, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-import { findMovie } from '../../helpers/findMovie';
-import { useActions } from '../../hooks/useActions';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { useCurrentMovie } from '../../hooks/useCurrentMovie';
-import { ReservePage } from './ReservePage';
-import { defaultTicket } from '../../config/defaultValues';
+import { ReservePage } from "./ReservePage";
 
-export const ReservePageContainer: React.FC = () => {
+import { findMovie } from "../../helpers/findMovie";
+import { useActions } from "../../hooks/useActions";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useCurrentMovie } from "../../hooks/useCurrentMovie";
+import { defaultTicket } from "../../config/defaultValues";
+
+export const ReservePageContainer: FunctionComponent = () => {
   const { setCheckedMovie } = useActions();
-
   const { id } = useParams();
-
   const currentMovie = useCurrentMovie(id!);
+
   const { Title, imdbID } = currentMovie;
 
   const { bookedMovies } = useAppSelector((state) => state.seats);
@@ -27,7 +27,6 @@ export const ReservePageContainer: React.FC = () => {
   }
   useEffect(() => {
     setCheckedMovie({ ...defaultTicket, id: id!, title: Title });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Title, id]);
 
   return (

@@ -1,10 +1,12 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Ticket } from './Ticket';
-import { TicketContainerProps } from './interfaces';
-import { useActions } from '../../hooks/useActions';
+import { Ticket } from "./Ticket";
 
-export const TicketContainer: React.FC<TicketContainerProps> = ({
+import { useActions } from "../../hooks/useActions";
+
+import { TicketContainerProps } from "./interfaces";
+
+export const TicketContainer: FunctionComponent<TicketContainerProps> = ({
   id,
   title,
   amount,

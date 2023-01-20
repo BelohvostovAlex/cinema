@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import { FunctionComponent, useEffect } from "react";
 
-import { Main } from './Main';
-import { useActions } from '../../hooks/useActions';
-import { useAppSelector } from '../../hooks/useAppSelector';
+import { Main } from "./Main";
+import { useActions } from "../../hooks/useActions";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
-export const MainContainer: React.FC = () => {
+export const MainContainer: FunctionComponent = () => {
   const { setFilter, setPage, fetchMovies } = useActions();
   const { movies, filter, page } = useAppSelector((state) => state.movies);
 
@@ -20,7 +20,6 @@ export const MainContainer: React.FC = () => {
   useEffect(() => {
     setFilter(filter);
     fetchMovies({ filter, page });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, page]);
 
   const hasMovies = !!movies.length;

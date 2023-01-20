@@ -1,16 +1,15 @@
-import React from 'react';
+import { FunctionComponent } from "react";
 
-import { Table, TableBody, TableCell, TableRow } from '@mui/material';
-import { CinemaSingleSeat } from '../CinemaSingleSeat';
-import { CinemaSeatsProps } from './iterfaces';
+import { Table, TableBody, TableCell, TableRow } from "@mui/material";
+import { CinemaSingleSeat } from "../CinemaSingleSeat";
 
-import { styles } from './styles';
+import { CinemaSeatsProps } from "./iterfaces";
+import { styles } from "./styles";
 
-const seatsRows = ['A', 'B', 'C', 'D', 'E'];
-
+const seatsRows = ["A", "B", "C", "D", "E"];
 const seatsColumns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-export const CinemaSeats: React.FC<CinemaSeatsProps> = ({
+export const CinemaSeats: FunctionComponent<CinemaSeatsProps> = ({
   title,
   id,
   checkPrice,
@@ -18,7 +17,7 @@ export const CinemaSeats: React.FC<CinemaSeatsProps> = ({
   isReserved,
 }) => {
   return (
-    <Table sx={styles.seatsTable}>
+    <Table sx={styles.seatsTable} data-testid="seats-table">
       <TableBody>
         {seatsRows.map((row) => (
           <TableRow key={row}>
