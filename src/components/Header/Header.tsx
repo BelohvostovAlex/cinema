@@ -26,7 +26,7 @@ export const Header: FunctionComponent<HeaderProps> = ({
     <Box sx={styles.header}>
       <Container maxWidth={false}>
         <Box sx={styles.headerWrapper}>
-          <Box>
+          <Box onClick={() => navigate("/")}>
             <Typography variant="h2" sx={styles.headerTitle}>
               {title}
             </Typography>

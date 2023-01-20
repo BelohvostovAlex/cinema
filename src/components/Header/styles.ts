@@ -12,6 +12,7 @@ export const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-start",
+    cursor: "pointer",
   },
   headerTitle: {
     marginBottom: "30px",
